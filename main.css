@@ -1,0 +1,808 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(90, 88, 88);
+}
+
+#trckingHeading{
+    color: #f0f0f0;
+}
+
+
+.bill-Image1{
+ width: 76%;
+ position: relative;
+ left: 19%;
+ transform: translate(26%);
+
+}
+
+
+
+#image-container{
+    width: 100%;
+    padding: 5px;
+    padding-right: 5px;
+    margin-top: 0;
+    
+}
+
+
+
+@media (max-width: 768px) {
+    .bill-Image1{
+        width: 75%;
+        height: 100%;
+        margin: 0% auto;
+        transform: translate(1%);
+        position: relative;
+        
+    }
+
+
+    #image-container{
+        width: 100%;
+        display: grid;
+        grid-template-rows: auto;
+        position: relative;
+        top: 40px;
+            
+        }
+        
+
+    .tracking-header{
+        position: relative;
+        /* width: 100% auto; */
+        margin-top: 29%;
+        background-color: #c5c4c494;
+        margin-left: 11%;
+        
+    
+    }
+
+    #banner-background{
+        z-index: -1;
+        position: relative;
+        transform: translate(-45px);
+        height: 200px;
+    }
+
+    #trckingHeading{
+          font-size: 22px;
+          top: 18%;
+        margin-left: 2px;
+        z-index: 1;
+
+    }
+
+    
+    #trackingsub{
+        position: relative;
+        width: 100% auto;
+        font-size: 16px;
+        margin-top: 15%;
+        display: none;
+    }
+
+    .track-form-div{
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        max-width: 100%;
+      
+    
+    }
+
+    #inputcode{
+        flex: 1;
+        min-width: 0;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        position: relative;
+        border-radius: 4px;
+        color: black;
+        height: 3rem;
+        transform: translate(-5%);
+        margin-top: 15px;
+        z-index: 1;
+        
+        
+    
+    }
+      
+
+
+     #track-btn{
+        margin-top: 15px;
+        position: relative;
+        white-space: nowrap;
+        padding: 12px 20px;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 0;
+        height: 3rem;
+        width: 7rem;
+        z-index: -1;
+       
+     }
+
+     
+
+    }
+
+    @media (max-width: 1000px) {
+        #track-btn{
+            position: relative;
+            white-space: nowrap;
+            padding: 12px 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 0;
+            height: 3rem;
+            width: 7rem;
+        }
+
+        #inputcode{
+            flex: 1;
+            min-width: 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            position: relative;
+            border-radius: 4px;
+            color: black;
+            height: 3rem;
+            transform: translate(-5%);
+            
+            
+        
+        }
+
+        .track-form-div{
+            display: flex;
+            flex-direction: row;
+            padding: 5px;
+            max-width: 100%;
+           
+        
+        }
+    }
+        
+    
+
+
+#image-container{
+     width: 100%;
+   
+}
+
+
+
+   
+ 
+
+
+.tracking-header{
+    position: absolute;
+    top: 35%;
+    color: darkred;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 100;
+    font-size: 50px;
+}
+
+.input-track{
+  border: none;
+   width: 40%;
+   height: 10%;
+   top: 65%;
+   position: absolute;
+   background-color:white;
+   z-index: 100;
+   color: black;
+   font-size: 16px;
+   
+   
+}
+
+.input-track[placeholder]{
+    color: rgb(69, 67, 67);
+    font-size: 25px;
+}
+
+.track-btn{
+    top: 65%;
+    position: absolute;
+    height: 10%;
+    border: none;
+    background-color: grey;
+    color: white;
+    width: 10%;
+    z-index: 100;
+    margin-left: 30.2%;
+    font-size: 35px;
+    
+}
+
+.track-btn:hover{
+    background-color: darkred;
+    
+}
+
+.tracking-sub{
+    top: 60%;
+    position: absolute;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(7, 7, 245);
+    display: none;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+@keyframes animatetop{
+    from{ top: -300px; opacity: 1;}
+    to{top: 0; opacity: 1}
+}
+
+
+
+.modal-container{
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    animation-name: animatetop;
+    animation-duration: 1s;
+    animation-delay: 0.1s;
+    position: fixed;
+    right: 30px;
+    margin-top: 30px;
+  
+}
+
+.close{
+    float: right;
+    color: red;
+    font-size: xx-large;
+    cursor: pointer;
+    top: 0px;
+}
+
+.close:hover{
+    color: white;
+    background-color: blue;
+}
+
+
+.input-field{
+    width: 100%;
+    padding: 15px;
+    margin: 5px;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    
+
+}
+
+.input-field:focus{
+    background-color: #ddd;
+    outline: none;
+}
+ .Submit-btn{
+    background-color: #04aa6d;
+    color: white;
+    width: 100%;
+    border: none;
+     padding: 13px 2px;
+     cursor: pointer;
+     opacity: 0.9;
+     
+
+    }
+
+ .submit-btn:hover{
+    opacity: 1;
+ }
+    
+ .LoginModal{
+
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+   
+}
+
+
+
+@keyframes animatetop{
+    from{ top: -300px; opacity: 1;}
+    to{top: 0; opacity: 1}
+}
+
+
+
+.LoginCloseModal{
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: xx-large;
+    font-weight: bolder;
+    cursor: pointer;
+    background-color: white;
+
+}
+
+
+.container-bill{
+    width: 60% auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 8%;
+   
+ 
+    
+}
+
+
+  .Ad-image{
+
+    height: 100%;
+    width: 50%;   
+
+  }
+
+
+.fourth{
+    height: 15%;
+    width: 15%;
+}
+
+.motivate-container{
+    width: 85%;
+    height: fit-content;
+    background-color: rgb(244, 244, 244);  
+}
+
+ .motivate-container div{
+    width: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    border: thin solid navy;
+    height: fit-content;
+    
+} 
+
+
+#mother{
+    width: 80% auto;
+    height: fit-content;
+    display: flex;
+    margin: 5%;
+    background-color: #f1f1f1;
+    
+}
+.motherhearder{
+    margin-left: 13%;
+    padding-bottom: 1%;
+    position: absolute;
+    color: navy;
+    text-size-adjust: 80%;
+}
+ #child{
+    width: 50%;
+    height: 100%;
+    margin: 1%;
+ }
+ 
+ #child h5{
+    color: navy;
+   }
+
+ #childimage{
+    width: 100%;
+    height: 100%;
+
+ }
+
+ #gchild{
+    width: 45%;
+    height: 40%;
+    margin: 1%;
+ }
+
+ .childs{
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+
+
+.contact{
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;
+}
+  
+.container-footer{
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    width: 85%;
+    margin: 15px auto;
+}
+.container-footer div{
+    height: 50%;
+    width: 30%;
+    margin-top: 15px;
+}
+
+.container-blogs{
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    width: 85%;
+    margin: 15px auto;
+   height: fit-content;
+}
+.container-blogs div{
+    height: fit-content;
+    width: 30%;
+    margin-top: 15px;
+}
+
+.blog-img{
+    height: 40%;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+@media (max-width: 768px){
+    body{
+        padding: 10px;
+
+    }
+}
+
+@media (max-width: 768px){
+
+    body{
+        font-size: 15px;
+        font-family: 'Courier New', Courier, monospace;
+        left: 0;
+        right: 0; 
+        overflow-wrap: break-word;
+    }
+    .modal-container{
+        width: 100%;
+        left: 0;
+        right: 0;
+        z-index: 100000;
+        transform: translate(-4%);
+
+    }
+    
+
+.container-bill{
+    display: grid;
+    grid-template-rows: auto;
+    width: 70%;
+    margin-top: 20%;
+
+}
+
+.fourth{
+    width: 60%;
+    height: 60%;
+    margin: 10px;
+    transform: translate(45%);
+}
+
+.Ad-image{
+    height: 70%;
+    width: 100%;
+    
+}
+
+
+
+#mother{
+ display: grid;
+ grid-template-rows: auto;
+ width: 100%;
+ height: fit-content;
+ margin: 5% auto;
+}
+
+
+.motherhearder{
+color: navy;
+align-self: center;
+font-weight: bolder;
+width: 85%;
+position: relative;
+  
+}
+
+#motherhearder{
+font-size: x-large;
+}
+
+#child h5{
+ color: navy;
+}
+ 
+
+#gchild{
+  width: 100%;  
+}
+
+
+
+#child{
+    display: grid;
+    grid-template-rows: auto;
+    height: 50%;
+    width: 100%;
+    margin: 5% auto;       
+}
+
+.container-blogs{
+    display: grid;
+    grid-template-rows: auto;
+    width: 100%;
+    
+}
+#blogdiv{
+    width: 100%;
+    margin-top: 10%;
+    background-color: #f2eaea;
+}
+
+#blogdiv h5{
+  color: rgb(6, 6, 107);
+}
+
+
+.blog2{
+    width: 100%;
+    height: 100%;
+    gap: 5px;
+}
+
+.blog-img{
+    width: 100%;
+    height: 50%;
+}
+
+.container-footer{
+    display: grid;
+    grid-template-rows: auto;
+    width: 100%;
+}
+
+.container-footer div{
+    width: 100%;
+    gap: 5px;
+}
+
+.blog-head {
+    font-size: 10px;
+    transform: translate(-25%);
+    
+    
+}
+
+#whatsapp-icon{
+    height: 60px;
+    cursor: pointer;
+}
+
+#WhatsAppChatcontact{
+    position: fixed;
+    bottom: 100px;
+    right: 60px;
+    
+}
+
+#courierWhatsapp{
+    height: 60px;
+    position: absolute;
+    cursor: pointer;
+    
+    
+}
+#courierInfo-head{
+    transform: translate(-15%);
+}
+
+#courier-modalChat{
+ transform: translate(-25%);
+ position: relative;
+}
+
+
+#modal-ok{
+    margin-top: 20%;
+    /* position: absolute; */
+    margin-left: 20%;
+    transform: translate(-25%);
+}
+
+}
+
+
+
+#whatsapp-icon{
+    height: 60px;
+    position: absolute;
+    cursor: pointer;
+} 
+
+#courierWhatsapp{
+    height: 60px;
+    position: absolute;
+    cursor: pointer;
+ 
+    
+}
+
+.blog-head{
+    margin-left:38% ;
+    font-size: 20px;
+}
+
+    
+    #courier-modal{
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+       
+    }
+
+    #delivery-logo{
+        position: relative;
+        width: 15%;
+        margin-left: 43%;
+        margin-top: 3%;
+    }
+
+    #delivery-text{
+        margin-left: 5%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+  #close-modal{
+    float: right;
+    font-size: 40px;
+    cursor: pointer;
+    margin-right: 5%;
+    display: none;
+  }
+ 
+   #close-modal:hover{
+    color: white;
+    background-color: red;
+   }
+
+   #modal-ok{
+    margin-left: 43%;
+    background-color: rgb(243, 84, 84);
+    color: white;
+    margin-top: 25%;
+    width: 100px;
+    height: 50px;
+    border: none;
+    font-size: large;
+   } 
+
+   #modal-ok:hover{
+    color: white;
+    background-color: rgb(0, 102, 255);
+   }
+
+
+  #courier-modal-content{
+    background-color: white;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    margin: 5% 25%;
+    animation-name: animatetop;
+    animation-duration: 1s;
+    animation-delay: 0.1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    align-items: center;
+   
+  }
+
+  #courier-modalChat{
+    margin-left: 35%;
+    position: absolute;
+
+   }
+   #courier-modalChat a{
+      text-decoration: none;
+      font-size: larger;
+      color:  blue ;
+      cursor: pointer;
+   }
+
+   #courierWhatsapp{
+    position: absolute;
+    margin-left: 37%;
+   }
+   
+
+  /* delivery modal info */
+
+@media (max-width: 768px){
+    #courier-modal{
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+       
+    }
+
+    #courier-modal-content{
+        background-color: rgb(255, 255, 255);
+        height: 80%;
+        width: 95%;
+        align-items: center;
+        transform: translate(-24%);
+        
+        
+      }
+
+}
+
+#banner-background{
+    position: absolute;
+    transform: translate(-76%);
+    width: 100%;
+    z-index: -1;
+  
+}
+   
+
+        
+    
+    
+    

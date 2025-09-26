@@ -1,0 +1,217 @@
+
+
+
+.header-bar{
+    display: flex;
+    width: 100%;
+}
+
+.logo{
+    margin-right: 77%;
+    cursor: pointer;
+    position: absolute;
+    width: 12%;
+    display: block;
+}
+
+
+.LoginOpenModal{
+position: relative;
+margin-left: 45%;
+border: none;
+background-color: transparent;
+}
+
+
+.register-modal{
+position: relative;
+border: none;
+background-color: transparent;
+}
+
+
+.LoginOpenModal:hover{
+   background-color: aqua;
+}
+
+.register-modal:hover{
+    background-color: aqua;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(172, 128, 172);
+    /* padding: 1rem 2rem; */
+    padding: 1rem;
+   width: auto;
+   position: relative;
+   
+    
+    
+
+
+}
+
+.navbar ul{
+    display: flex;
+}
+
+.navbar li{
+    list-style: none;
+}
+
+.navbar li a{
+    color: rgb(232, 232, 239);
+    text-decoration: none;
+    padding: 2rem;
+    transition: all 0.9 ease;
+    
+}
+.navbar li a:hover{
+   font-style: italic;
+}
+
+.hamburger{
+    top: 1.75rem;
+    justify-content: space-between;
+    display: none;
+    width: 55px;
+    height: 30px;
+    flex-direction: column;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: navy;
+
+}
+
+.hamburger .bar{ 
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.menu-close{
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: white;
+        width: 100%;
+        overflow: none;
+    }
+
+    .hamburger{
+        display: flex;
+        align-self: center;
+        
+    }
+
+    #image-container{
+        width: 100%;
+    }
+
+    .navbar-menu{
+        display: none;
+        width: 100%;
+        height: 80%;
+        background-color: black;
+        z-index: 1000;
+    }
+
+     .navbar{
+        flex-direction: column;
+        align-items: flex-end;
+        background-color: rgb(243, 238, 228);
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+    
+     }
+
+     .navbar-menu ul{
+        flex-direction: column;
+        width: 60%;
+        z-index: 1000;
+        position: absolute;
+        /* height: 80%; */
+        background-color: rgba(0, 0, 0, 0.89);
+        
+        
+     }
+
+
+     .menu-close{
+        font-size: 35px;
+        color: white;
+        font-weight: bolder;
+        position: absolute;
+        z-index: 2000;
+        cursor: pointer;
+        display: block;
+        float: right;
+        margin-left: 70%;
+     }
+
+     .menu-close:hover{
+      color: red;
+      background-color: white;
+     }
+
+
+
+     .navbar-menu li {
+        text-align: left;
+        padding: 5%;
+        width: 70%;
+        animation-name: animemenu;
+        animation-duration: 1s;
+        animation-delay: 0.1s; 
+
+     }
+
+     @keyframes animemenu{
+        from{ top: -300px; opacity: 1;}
+        to{top: 0; opacity: 1}
+     }
+
+    .navbar-menu li a{
+        color: white;
+        padding: 10px;
+        
+
+    }
+
+    .navbar-menu.active{
+        display: flex;
+    }
+
+#loginbtn{
+    margin-left: 5%;
+    color: white;
+
+
+
+}
+
+#registerbtn{
+    margin-left: 5%;
+    color: white;
+}
+
+#logoicon{
+    width: 25%;
+    left: 10%;   
+    
+}
+
+}

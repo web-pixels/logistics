@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Logistic</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+
+<header>
+   <div class="header-bar">
+   <h3 style="color: darkblue; display: none;">Universal Logistic</h3>
+    <!-- <button class="LoginOpenModal" id="loginbtn">Login</button>
+    <button class="register-modal" id="registerbtn">register</button> -->
+   </div>
+
+
+   <nav class="navbar">
+    <img src="/asset/LOG V2.1.png" alt="logo" class="logo" id="logoicon">
+    <button class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <div class="navbar-menu">
+        
+        <ul class="menu-ul">
+            <span class="menu-close">&times;</span>
+            <li><a href="">HOME</a></li>
+            <li><a href="#blog">BLOGS</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="#contact-section">CONTACT</a></li>
+            <li style="display: none;"><a href="admin.html$">admin</a></li>
+            <li><button class="LoginOpenModal" id="loginbtn" disabled style="display: none;">Login</button></li> 
+            <li><button class="register-modal" id="registerbtn" disabled>register</button></li>
+        </ul>
+
+    </div>
+   </nav>
+
+
+
+   <!-- registration -->
+   
+   <div class="modal">
+    <div class="modal-container">
+        <span class="close">&times;</span><br>
+        <h1 class="modalhead" style="color: blue;">Create account</h1>
+        <form action="" class="modal-content" style="border: none;">
+            <input type="full name" name="" class="input-field" placeholder="enter your full" required>
+            <input type="email" name="email" class="input-field" placeholder="enter your email" required>
+            <input type="password" name="password"  class="input-field" placeholder="enter a strong password" required>
+            <input type="password" name="password"  class="input-field" placeholder="comfirm your password" required>
+        </form>
+
+        <p>By creating account, you agree with our <a href="" style="color: red;"> terms & privacy</a></p>
+
+        <button class="Submit-btn">Submit</button>
+        <p>already have an account? <a href="" style="text-decoration: none ; color: green;" class="LoginOpenModal">login here</a></p>
+    </div>
+   </div>
+
+
+
+<!-- login -->
+   <div class="LoginModal">
+    <div class="modal-container">
+        <span class="LoginCloseModal" style="color: red;">&times;</span>
+        <h1 class="modalhead" style="color: blue;">Login</h1>
+        <form action="" class="modal-content" style="border: none;">
+           
+            <input type="email" name="email" class="input-field" placeholder="enter your email" required>
+            <input type="password" name="password"  class="input-field" placeholder="enter a strong password" required>
+           
+        </form>
+
+        
+
+        <button class="Submit-btn" disabled>Login</button>
+        <p>If you don't have account, please <a href="" style="text-decoration: none ; color: green;">register here</a></p>
+    </div>
+   </div>
+
+</header>
+
+<main>
+    <div class="container" id="image-container">
+        <div class="bill-Image-div">
+            <img src="./asset/bill Image2.png" alt="bill-Image" class="bill-Image1">
+            <img src="./asset/banner image5.png" alt="" id="banner-background">
+        </div>
+        <div class="tracking-header-div" id="Trackh1">
+        <h1 class="tracking-header" id="trckingHeading"><b style="color: aliceblue;">Track the status of your Parcel </b></h1>
+        </div>
+
+        <!-- <div class="tracking-sub-div">
+        <p class="tracking-sub" id="trackingsub">Input your Tracking Code to see the Location of your parcel</p>
+    </div> -->
+
+    <div class="track-form-div">
+        <!-- <form action="" class="track-form"> -->
+            <input type="text" id="inputcode"  class="input-track" placeholder="put your Parcel tracking number" required>
+       <!-- </form> -->
+        <button class="track-btn" id="track-btn" onclick="getTrackingData()">Track→</button>
+       </div>
+      
+    
+    </div>
+    <hr style="color: navy; margin-top: 0%;" >
+
+    <div id="courier-modal"> 
+        <div id="courier-modal-content">
+            <span id="close-modal" class="modal-ok">&times;</span>
+            <div id="delivery-logodiv"><img src="asset/LOG V2.1.png" alt="" id="delivery-logo"></div>
+            <h5 style="margin-left: 38%; font-size: larger;" id="courierInfo-head">Courier Information</h5>
+            <hr style="width: 100%; color: grey;">
+            <p id="delivery-text"><strong>Track-code:</strong> <span id="orderNumber"></span></p>
+            <p id="delivery-text"><strong>Sender-name:</strong> <span id="customerName"></span></p>
+            <p id="delivery-text"><strong>Sender-address:</strong> <span id="Sender_address"></span></p>
+            <p id="delivery-text"><strong>reciever's Name:</strong> <span id="recieverName"></span></p>
+            <p id="delivery-text"><strong>reciever address:</strong> <span id="recieverAddress"></span></p>
+            <p id="delivery-text"><strong>Status:</strong> <span id="status"></span></p>
+            <p id="delivery-text"><strong>Expected delivery date:</strong> <span id="date"></span></p>
+            <hr style="width: 100%; color: grey;">
+            <span id="courier-modalChat"><a href="https://wa.me/6287887360110"><img src="/asset/whatsapp icon.png" alt="" id="courierWhatsapp"><br><br><p>chat with us for more enquiry</p></a></span>
+            <button id="modal-ok">close</button>
+        </div>
+    </div>
+    <!-- <hr style="color: navy; width: 50%; margin-left: 25%;"> -->
+    <!-- <hr style="color: navy; width: 50%;"> -->
+    
+
+
+    <div class="container-bill" id="container-bills">
+        <div class="fourth"> <img src="/asset/delivery online.jpg" alt="" class="Ad-image"> <h3>Online delivery <p  style="font-size: small;">book your delivery from the comfort of your home and track the status in real time</p></h3></div>
+        <div class="fourth"> <img src="/asset/worldwide delivery.jpg" alt="" class="Ad-image" ><h3>Worldwide delivery <p style="font-size: small;">we deliver anywhere in the world</p></h3></div>
+        <div class="fourth"> <img src="/asset/24 hours delivery.jpg" alt="" class="Ad-image"><h3 >24hours work <p  style="font-size: small;">we work 24hours monday to sunday </p></h3></div>
+        <div class="fourth"> <img src="/asset/fast delivery.jpg" alt="" class="Ad-image"><h3 >fast delivery <p  style="font-size: small;">We deliver goods secured and quick be assured that we will deliver your parcel to your door stepnat your choosen date and time</p></h3></div>
+    </div>
+
+    <div class="motherhearder" id="motherhearder"><h5>Why ship with Universal Logistics</h5></div>
+    <div id="mother">
+        <div id="child" class="childs">
+            <div id="gchild"><h5>Modern Fast shipping</h5>
+                <p>Fast and Reliable shipping is our objective, 
+                    we prioritze safe and secure shipment of goods</p></div>
+
+            <div id="gchild"><h5>delivery at affordable rate</h5>
+                <p>We ensure to make the cost of delivery to be cheaper 
+                    and affordable by everyone for antone around the word</p></div>
+
+            <div id="gchild"><h5>resposible Customer service</h5>
+                <p>our customer service are very active 24hours and 7days a week
+                    you can contact us on our social media app like WhatsApp</div>
+
+            <div id="gchild"><h5>Re-direct your shipment</h5>
+                <p>we have have flexible option where you can contact our customer
+                     service and r-direct your shipment, cancel your shipment or pend it</p></div>
+        </div>
+        <div id="child"><img src="/asset/delivery guy van.jpg" alt="" id="childimage"></div>
+    </div>
+
+   
+
+    <section id="blog">
+        <div>
+        <div class="blog-head">
+            <h5 style="color: navy;">Our shipping is customer friendly with varieties of choices</h5> 
+           
+        </div>
+    
+            <div class="container-blogs">
+                <div class="blog1" id="blogdiv">
+                    <img src="/asset/delivery personel.jpg" alt="" class="blog-img">
+                    <h5>Know the Status of your package</h5>
+                    <p>You don't need to be worried about the location 
+                        of your goods, all you need to do is input your unique tracking code
+                        in the tracking form and click "track below" you will 
+                        see the current status of your package 
+                    </p>
+                </div>
+                    
+            
+                <div class="blog2" id="blogdiv">
+                    <img src="/asset/delivery van.jpg" alt="" class="blog-img" style="height: 50%;">
+                    <h5>Pause your delivery</h5>
+                    <p>Incase you travelled or wouldn't be able to recieve your package
+                        kindly contact our customer service and request for a "pause"
+                        you can contact the customer service to reschedule your delivery
+                    </p>
+                </div>
+            
+
+                <div class="blog3" id="blogdiv">
+                    <img src="/asset/delivery girl.jpg" alt="" class="blog-img"><br>
+                    <h5>Re-direct your Goods</h5>
+                    <p>If you made a mistake on your reciever's Address, or you
+                         changed location, you don't need to worry
+                        about it, all you need to do is to request fo a 
+                        Re-direction of your package
+                    </p>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<section id="contact-section">
+    <footer class="contact" style="background-color: aliceblue; height: fit-content;">
+        <div class="container-footer">
+            <div class="address">
+                <h5 style="color: navy;">Head office</h5>
+            <p>#11226 old Queens park county Manchester, United Kingdom</p>
+            #570 Oregon high-way, Dallas Texas, United States
+        </div>
+            <div class="branch-offices"><h5 style="color: navy;">branch Office</h5>
+            <p>We have branch offices in all part of the world, Including major offices United States of America,
+                Asia, Africa, Europe, North America, South America, Russia, 
+            </p>
+        </div>
+            <div class="social-media"><h5 style="color: navy;">Email address</h5>
+                <p style="cursor: pointer; color: rgb(205, 61, 61); ">univeersallogistics@gmail.com</p>
+                <h5  style="color: navy;">phone number</h5>
+
+                <p style="color: rgb(205, 61, 61); cursor: pointer;">0878-8736-0110</p>
+                <p>whatsapp</p>
+                <a href="https://wa.me/6287887360110" id="WhatsAppChatcontact"><span><img src="./asset/whatsapp icon.png" alt="" id="whatsapp-icon"><br></span></a><br><br>
+            </div>
+               
+            
+              
+            
+                      
+            <div style="height: 100px; width: 200px; margin-left: 30%;">
+                <img src="/asset/LOG V2.1.png" alt="" style="height: 100%; width: 100%;"></div>
+            <hr style="color: grey;">
+            <hr style="color: grey;">
+        
+        </div>
+        
+        <!-- <i>facebook icon</i>
+        <i>twiter icon</i> -->
+    </footer>
+</section>
+<!-- <script src="https://kit.fontawesome.com/08dbaeff5a.js" crossorigin="anonymous"></script> -->
+<script src="nav.js"></script>
+<script src="backend.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header id="admin-hearder">
+        <nav id="admin-navbar">
+         <img src="/asset/LOG V2.1.png" alt="" id="admin-logo">
+         <!-- <button id="back">back</button> -->
+        </nav>
+    </header>
+
+    <br>
+    <br>
+
+
+    <main>
+        <div id="createOrderdiv">
+                    <h1 id="oder-header">CREATE ORDER</h1>
+              <div id="form-div">
+                    <form action="post" id="courierForm">
+                        <label for="tracking-code">TRACKING CODE</label>
+                        <input type="text" name="" id="tracking-code" placeholder="input tracking code" required><br>
+                        <label for="sender-name">SENDER NAME</label>
+                        <input type="text" name="" id="sender-name" placeholder="input the sender's name" required><br>
+                        <label for="sender-address">SENDER ADDRESS</label>
+                        <input type="text" name="" id="sender-address" placeholder="input sender's address" required><br>
+                        <label for="receiver-name">RECIEVER'S NAME</label>
+                        <input type="text" name="" id="receiver-name" placeholder="input receiver,s name" required><br>
+                        <label for="receiver-address">RECIEVER'S ADDRESS</label>
+                        <input type="text" name="" id="receiver-address" placeholder="input receiver's address" required ><br>
+                        <label for="date">ESPECTED DATE OF DELIVERY</label>
+                        <input type="text" name="" id="date-created" placeholder="input estimated delivery date" required><br>
+                        <label for="status">LOCATION</label>
+                        <input type="text" name="" id="status" placeholder="input status" required><br>
+                        <button onclick=" loadCourier()" id="createbtn">CREATE ORDER</button><br>
+                    </form>
+                </div>
+       </div>
+
+       <br>
+       <hr >
+       <br>
+
+        <div class="updateDiv"> 
+            <h1 id="updateheader">UPDATE ORDER</h1>
+            <div>
+                <form action="patch" id="locationUpdate">
+                    <label for="tracking-code">TRACKING CODE</label>
+                    <input type="text" name="" id="Updatetracking-code" placeholder="input tracking code" required><br>
+                    <label for="location">LOCATION</label>
+                    <input type="text" name="" id="delivery_location" placeholder="input location of courier" required><br>
+                    <button id="locationbtn">UPDATE</button><br>
+                    <!-- <input type="text" name="" id="sender-name" placeholder="input the sender's name">
+                    <input type="text" name="" id="sender-address" placeholder="input sender's address">
+                    <input type="text" name="" id="receiver-name" placeholder="input receiver,s name">
+                    <input type="text" name="" id="receiver-address" placeholder="input receiver's address">
+                    <input type="text" name="" id="delivery-date" placeholder="input estimated delivery date"> -->
+                    
+                </form>
+            </div>
+            </div>
+
+<br>
+<hr >
+<br>
+
+            <div id="deleteformdiv">
+                <H1 id="deleteheader">DELETE ORDER</H1>
+                <div>
+                    <form action="" id="deleteform">
+                    <input type="text" name="" id="delete-order" placeholder="insert the tracking to delete-order" required><br>
+                    <button id="deletebtn">delete</button>
+                   </form>
+              </div> 
+            </div>
+    </main>
+
+ <script>
+
+    async function loadCourier(){
+
+     const formdata = { tracking_code: document.getElementById('tracking-code').value,
+                        sender_name: document.getElementById('sender-name').value,
+                       sender_addtress: document.getElementById('sender-address').value,
+                        reciever_name: document.getElementById('reciever-name').value,
+                       reciever_adddress: document.getElementById('receiver-address').value,
+                        date_created: document.getElementById('date-created').value,
+                        status: document.getElementById('status').value,
+                        };
+
+        try {
+            const response = await fetch('http://localhost:3000/post',{
+                method: 'POST',
+                headers: {
+                    "content-type" : 'application/json'
+                     
+                },
+                body: JSON.stringify(formdata)
+            });
+            const data = await response.json();
+            alert('courier loaded successfully' + JSON.stringify(data));
+            document.getElementById('courierForm').reset();
+        } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to add courier');
+      }
+
+        };
+
+
+
+        async function UpdatetrackingLocation(){
+            document.getElementById('tracking_code').value;
+            document.getElementById('delivery_location').value;
+
+
+            try{
+                const response = await fetch('http://localhost:3000/update', {
+                    method : 'post',
+                    header : {
+                        'content-type' : 'application/json'
+                    },
+                    body: JSON.stringify({ location_status: status })
+             });
+             const data = await response.json();
+                alert('Location updated: ' + JSON.stringify(data));
+                document.getElementById('locationForm').reset();
+                } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to update location');
+                } 
+            }
+
+            
+            async function deleteCourier(){
+                document.getElementById('trackking_code').value;
+
+                 try{
+                        response = await fetch('http://localhost:3000/delete', {
+                        method : 'post',
+                        header : {
+                            'content-type' : 'application/json'},
+                            body: JSON.stringify({ location_status: status })
+                     });
+
+                     const data = await response.json();
+                     alert('successfully deleted:' + JSON.stringify(data))
+                     document.getElementById('delete-order').reset();
+                 }
+                 catch (error) {
+                console.error('Error:', error);
+                alert('Failed to update location');
+                } 
+            }
+        
+
+ </script>
+
+</body>
+</html>

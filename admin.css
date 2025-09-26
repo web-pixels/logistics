@@ -1,0 +1,217 @@
+
+.body{
+    background: #f4f4f4;
+}
+#admin-navbar{
+    display: flex;
+    /* background-color: rgb(185, 181, 181); */
+    /* background: #f4f4f4; */
+    position: sticky;
+    height: 80px;
+}
+
+#admin-logo{
+    position: relative;
+    height: 60px;
+    margin-left: 43%;
+    margin-top: 8px;
+}
+
+
+#createOrderdiv{
+    max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    
+}
+
+#courierForm label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  
+}
+#courierForm input{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: none;
+}
+
+#createbtn{
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; 
+    margin-left: 30%; 
+}
+
+#deletebtn{
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; 
+    margin-left: 30%; 
+}
+
+#locationbtn{
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; 
+    margin-left: 30%; 
+}
+
+
+
+#courierForm{
+   max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+
+#oder-header{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 241, 58);
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 30px; 
+    margin-left: 27%; 
+}
+
+#locationUpdate{
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);  
+}
+
+.updateDiv{
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);   
+}
+
+#locationUpdate input{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: none;
+}
+
+#locationUpdate label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  
+}
+
+#deleteform{
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);  
+}
+
+#deleteform input{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: none;
+}
+
+#deleteform label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  
+}
+
+
+#deleteheader{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: red;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 30px; 
+      margin-left: 27%; 
+  }
+
+  #deleteformdiv{
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  
+
+  }
+
+  #updateheader{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: blue;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 30px; 
+      margin-left: 27%;
+
+  }
+
+  @media (max-width: 600px ){
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #oder-header, #deleteheader, #updateheader {
+     font-size: 16px;
+    }
+
+    #admin-logo {
+        transform: translate(-40%);
+    }
+    #createbtn{
+        transform: translate(-10%);
+    }
+
+  }
